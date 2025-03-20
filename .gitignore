@@ -1,4 +1,9 @@
-
 /build
 /dist
 *.xml
+*.mp3
+*.mp4
+*.xml
+test.py
+*.spec
+/.idea
