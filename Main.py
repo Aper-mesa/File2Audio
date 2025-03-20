@@ -11,10 +11,11 @@ from mutagen.mp3 import MP3
 # ffmpeg_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ffmpeg.exe")
 # AudioSegment.converter = ffmpeg_path
 def write_file(mp3Path, fileName):
-    with open("output.mp3", "wb") as f:
+    folder = "/".join(mp3Path.split("/")[:-1])
+    with open(folder + "/output.mp3", "wb") as f:
         with open(mp3Path, "rb") as f2:
             f.write(f2.read())
-    id3 = ID3("output.mp3")
+    id3 = ID3(folder + "/output.mp3")
     with open(fileName, "rb") as f:
         data = f.read()
     geob = GEOB(mime="obj/e621", filename=fileName, data=data, desc=fileName)
@@ -26,18 +27,19 @@ def write_file(mp3Path, fileName):
 def read_file(mp3Path):
     # 将所有文件解压到output文件夹中
     id3 = ID3(mp3Path)
+    folder = "/".join(mp3Path.split("/")[:-1])
     print("Extracted files:\n")
     for item in id3.items():
         if isinstance(item[1], GEOB):
             if item[1].mime == "obj/e621":
                 import os
                 try:
-                    os.makedirs("output")
+                    os.makedirs(folder + "/output")
                 except:
                     pass
-                with open("output/"+item[1].filename.split("/")[-1], "wb") as f:
+                with open(folder + "/output/"+item[1].filename.split("/")[-1], "wb") as f:
                     f.write(item[1].data)
-                print("output/"+item[1].filename.split("/")[-1]+"\n")
+                print(folder + "/output/"+item[1].filename.split("/")[-1]+"\n")
 def generate_empty_audio(output_file, file_name):
     """
     生成一个无声的短音频文件，包含标准 MP3 元数据
