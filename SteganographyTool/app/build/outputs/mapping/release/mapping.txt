@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.2"}
-# pg_map_id: b49cc0c
-# pg_map_hash: SHA-256 b49cc0cce8208da453465c72c16e40a8455effae77d86e73a4bffc835693f790
+# pg_map_id: 48002d9
+# pg_map_hash: SHA-256 48002d9b6e42f8e7a3b0fe4a1f8e9d4c083132975155adf9d8405f47924dd2f7
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
 # {"id":"sourceFile","fileName":"RemoteActionCompatParcelizer.java"}
     1:5:androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel):0:0 -> read
@@ -16689,19 +16689,19 @@ androidx.constraintlayout.widget.ConstraintSet -> w.n:
     android.util.SparseIntArray overrideMapToConstant -> f
     5:1136:void <clinit>():0:0 -> <clinit>
     1:21:void <init>():0:0 -> <init>
-    51:69:java.lang.String androidx.constraintlayout.motion.widget.Debug.getName(android.view.View):0:0 -> a
-    51:69:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
+    1:1:java.lang.String androidx.constraintlayout.motion.widget.Debug.getName(android.view.View):0:0 -> a
+    1:1:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Landroidx/constraintlayout/widget/ConstraintLayout;)V"}
-    70:201:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0:0 -> a
-    202:693:void androidx.constraintlayout.widget.ConstraintAttribute.setAttributes(android.view.View,java.util.HashMap):0:0 -> a
-    202:693:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
-    694:957:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0:0 -> a
-    958:981:void androidx.constraintlayout.widget.ConstraintHelper.<init>(android.content.Context):0:0 -> a
-    958:981:void androidx.constraintlayout.widget.Barrier.<init>(android.content.Context):0 -> a
-    958:981:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
-    982:984:void androidx.constraintlayout.widget.Barrier.<init>(android.content.Context):0:0 -> a
-    982:984:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
-    985:1096:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0:0 -> a
+    2:2:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0:0 -> a
+    3:3:void androidx.constraintlayout.widget.ConstraintAttribute.setAttributes(android.view.View,java.util.HashMap):0:0 -> a
+    3:3:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
+    4:4:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0:0 -> a
+    5:5:void androidx.constraintlayout.widget.ConstraintHelper.<init>(android.content.Context):0:0 -> a
+    5:5:void androidx.constraintlayout.widget.Barrier.<init>(android.content.Context):0 -> a
+    5:5:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
+    6:6:void androidx.constraintlayout.widget.Barrier.<init>(android.content.Context):0:0 -> a
+    6:6:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0 -> a
+    7:7:void applyToInternal(androidx.constraintlayout.widget.ConstraintLayout,boolean):0:0 -> a
     88:200:java.util.HashMap androidx.constraintlayout.widget.ConstraintAttribute.extractAttributes(java.util.HashMap,android.view.View):0:0 -> b
     88:200:void clone(androidx.constraintlayout.widget.ConstraintLayout):0 -> b
     201:202:void clone(androidx.constraintlayout.widget.ConstraintLayout):0:0 -> b
@@ -38272,11 +38272,13 @@ com.apermesa.stegtool.MainActivity -> com.apermesa.stegtool.MainActivity:
     60:62:void androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions.<init>():0 -> <init>
     60:62:void <init>():0 -> <init>
     63:75:void <init>():0:0 -> <init>
-    1:1:void runEmbed(java.util.List):0:0 -> t
-    1:1:void setBusy(boolean):0:0 -> u
-    1:1:void showStatus(java.lang.String):0:0 -> v
-    61:66:void androidx.activity.result.ActivityResultLauncher.launch(java.lang.Object):0:0 -> w
-    61:66:void withPermission(kotlin.jvm.functions.Function0):0 -> w
+    4:30:void openFolder():0:0 -> t
+    4:30:void access$openFolder(com.apermesa.stegtool.MainActivity):0 -> t
+    1:1:void runEmbed(java.util.List):0:0 -> u
+    1:1:void setBusy(boolean):0:0 -> v
+    1:1:void showStatus(java.lang.String):0:0 -> w
+    61:66:void androidx.activity.result.ActivityResultLauncher.launch(java.lang.Object):0:0 -> x
+    61:66:void withPermission(kotlin.jvm.functions.Function0):0 -> x
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(LV0/a;)V"}
 com.apermesa.stegtool.MainActivity$$ExternalSyntheticLambda0 -> k0.a:
@@ -38523,18 +38525,21 @@ com.apermesa.stegtool.MainActivity$runExtract$1 -> k0.g:
     80:93:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
     94:99:java.lang.Integer kotlin.coroutines.jvm.internal.Boxing.boxInt(int):0:0 -> j
     94:99:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
-    100:118:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
-    119:122:void com.apermesa.stegtool.MainActivity.access$setBusy(com.apermesa.stegtool.MainActivity,boolean):0:0 -> j
-    119:122:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
-    123:130:java.lang.Object kotlin.collections.CollectionsKt___CollectionsKt.first(java.util.List):0:0 -> j
-    123:130:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
-    131:158:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
-    159:162:void com.apermesa.stegtool.MainActivity.access$showStatus(com.apermesa.stegtool.MainActivity,java.lang.String):0:0 -> j
-    159:162:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
-    163:167:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
-    168:170:void com.apermesa.stegtool.MainActivity.access$setBusy(com.apermesa.stegtool.MainActivity,boolean):0:0 -> j
-    168:170:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
-    171:171:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
+    100:115:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
+    116:118:void com.apermesa.stegtool.MainActivity.access$showStatus(com.apermesa.stegtool.MainActivity,java.lang.String):0:0 -> j
+    116:118:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
+    119:121:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
+    122:125:void com.apermesa.stegtool.MainActivity.access$setBusy(com.apermesa.stegtool.MainActivity,boolean):0:0 -> j
+    122:125:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
+    126:133:java.lang.Object kotlin.collections.CollectionsKt___CollectionsKt.first(java.util.List):0:0 -> j
+    126:133:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
+    134:161:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
+    162:165:void com.apermesa.stegtool.MainActivity.access$showStatus(com.apermesa.stegtool.MainActivity,java.lang.String):0:0 -> j
+    162:165:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
+    166:170:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
+    171:173:void com.apermesa.stegtool.MainActivity.access$setBusy(com.apermesa.stegtool.MainActivity,boolean):0:0 -> j
+    171:173:java.lang.Object invokeSuspend(java.lang.Object):0 -> j
+    174:174:java.lang.Object invokeSuspend(java.lang.Object):0:0 -> j
 com.apermesa.stegtool.MainActivity$runExtract$1$files$1 -> k0.f:
 # {"id":"sourceFile","fileName":"MainActivity.kt"}
     com.apermesa.stegtool.MainActivity this$0 -> e

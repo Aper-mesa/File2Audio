@@ -31423,6 +31423,7 @@ com.apermesa.stegtool.MainActivity$runExtract$1$files$1:
 com.apermesa.stegtool.MainActivity$runExtract$1:
     public final java.lang.Object invoke$1()
 com.apermesa.stegtool.MainActivity:
+    public static void openFolder()
     public static void runExtract()
 com.apermesa.stegtool.R$id
 com.apermesa.stegtool.R$layout

@@ -1,6 +1,8 @@
 package com.apermesa.stegtool
 
 import android.Manifest
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -121,12 +123,32 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     val dir = files.first().parent ?: ""
                     showStatus(getString(R.string.status_done_extract, files.size, dir))
+                    openFolder()
                 }
             } catch (e: Exception) {
                 showStatus(getString(R.string.status_error, e.message ?: e.javaClass.simpleName))
             } finally {
                 setBusy(false)
             }
+        }
+    }
+
+    private fun openFolder() {
+        // Opens Downloads/File2Audio in the system file manager.
+        // Uses the ExternalStorage documents provider URI which AOSP Files and
+        // most OEM file managers understand.  Falls through silently if no
+        // compatible app is installed.
+        val uri = android.net.Uri.parse(
+            "content://com.android.externalstorage.documents/document/primary%3ADownloads%2FFile2Audio"
+        )
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            setDataAndType(uri, "vnd.android.document/directory")
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        try {
+            startActivity(intent)
+        } catch (_: ActivityNotFoundException) {
+            // No file manager handles this — status text already shows the path.
         }
     }
 
