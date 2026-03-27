@@ -8,3 +8,9 @@ test.py
 *.spec
 /.idea
 .idea/
+
+# Un-exclude Android project files (override the *.xml and *.mp3 rules above)
+!SteganographyTool/**/*.xml
+!SteganographyTool/**/*.mp3
+!SteganographyTool/**/*.gradle
+/.claude

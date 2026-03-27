@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">文件转音频</string>
+    <string name="btn_embed_media">嵌入媒体（图库）</string>
+    <string name="btn_embed_file">嵌入文件（任意文件）</string>
+    <string name="btn_extract">从 MP3 提取文件</string>
+    <string name="status_idle">就绪，请选择操作。</string>
+    <string name="author">作者：Apermesa</string>
+    <string name="status_processing">处理中…</string>
+    <string name="status_done_embed">完成！已保存至：%1$s</string>
+    <string name="status_done_extract">已提取 %1$d 个文件至：%2$s</string>
+    <string name="status_error">错误：%1$s</string>
+    <string name="status_cancelled">已取消。</string>
+    <string name="permission_rationale">需要存储权限才能在此设备上读写文件。</string>
+</resources>

@@ -1,0 +1,20 @@
+R_DEF: Internal format may change without notice
+local
+id btnEmbedFile
+id btnEmbedMedia
+id btnExtract
+id tvStatus
+layout activity_main
+raw silent
+string app_name
+string author
+string btn_embed_file
+string btn_embed_media
+string btn_extract
+string permission_rationale
+string status_cancelled
+string status_done_embed
+string status_done_extract
+string status_error
+string status_idle
+string status_processing

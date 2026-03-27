@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/status_idle"
+        android:textSize="14sp"
+        android:minLines="3"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:padding="8dp"
+        android:background="#F5F5F5" />
+
+    <Button
+        android:id="@+id/btnEmbedMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_embed_media"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnEmbedFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_embed_file"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnExtract"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_extract"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/author"
+        android:textSize="12sp"
+        android:layout_gravity="center" />
+
+</LinearLayout>

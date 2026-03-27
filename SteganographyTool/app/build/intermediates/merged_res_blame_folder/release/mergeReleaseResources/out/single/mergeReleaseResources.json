@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.apermesa.stegtool.app-release-4:/layout_activity_main.xml.flat",
+        "source": "com.apermesa.stegtool.app-main-5:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.apermesa.stegtool.app-release-4:/raw_silent.mp3.flat",
+        "source": "com.apermesa.stegtool.app-main-5:/raw/silent.mp3"
+    }
+]
