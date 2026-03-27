@@ -171,20 +171,12 @@ androidx.activity.result.PickVisualMediaRequestKt:
     public static synthetic androidx.activity.result.PickVisualMediaRequest PickVisualMediaRequest$default(androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$VisualMediaType,int,java.lang.Object)
 androidx.activity.result.contract.ActivityResultContracts$CaptureVideo
 androidx.activity.result.contract.ActivityResultContracts$CreateDocument
-androidx.activity.result.contract.ActivityResultContracts$GetMultipleContents:
-    public void <init>()
-    public synthetic bridge android.content.Intent createIntent(android.content.Context,java.lang.Object)
-    public android.content.Intent createIntent(android.content.Context,java.lang.String)
-    public synthetic bridge androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult(android.content.Context,java.lang.Object)
-    public final androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult(android.content.Context,java.lang.String)
-    public synthetic bridge java.lang.Object parseResult(int,android.content.Intent)
-    public final java.util.List parseResult(int,android.content.Intent)
 androidx.activity.result.contract.ActivityResultContracts$OpenDocument
 androidx.activity.result.contract.ActivityResultContracts$OpenDocumentTree
 androidx.activity.result.contract.ActivityResultContracts$OpenMultipleDocuments
 androidx.activity.result.contract.ActivityResultContracts$PickContact
-androidx.activity.result.contract.ActivityResultContracts$PickMultipleVisualMedia$Companion
-androidx.activity.result.contract.ActivityResultContracts$PickMultipleVisualMedia
+androidx.activity.result.contract.ActivityResultContracts$PickMultipleVisualMedia:
+    public void <init>()
 androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$Companion:
     public static synthetic void getACTION_SYSTEM_FALLBACK_PICK_IMAGES$annotations()
     public static synthetic void getEXTRA_SYSTEM_FALLBACK_PICK_IMAGES_MAX$annotations()
@@ -206,13 +198,20 @@ androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia:
     public static final java.lang.String EXTRA_SYSTEM_FALLBACK_PICK_IMAGES_MAX
     public static final java.lang.String GMS_ACTION_PICK_IMAGES
     public static final java.lang.String GMS_EXTRA_PICK_IMAGES_MAX
+    public void <init>()
+    public android.content.Intent createIntent(android.content.Context,androidx.activity.result.PickVisualMediaRequest)
+    public synthetic bridge android.content.Intent createIntent(android.content.Context,java.lang.Object)
     public static final android.content.pm.ResolveInfo getGmsPicker$activity_release(android.content.Context)
+    public final androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult(android.content.Context,androidx.activity.result.PickVisualMediaRequest)
+    public synthetic bridge androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult(android.content.Context,java.lang.Object)
     public static final android.content.pm.ResolveInfo getSystemFallbackPicker$activity_release(android.content.Context)
     public static final boolean isGmsPickerAvailable$activity_release(android.content.Context)
     public static final boolean isPhotoPickerAvailable()
     public static final boolean isPhotoPickerAvailable(android.content.Context)
     public static final boolean isSystemFallbackPickerAvailable$activity_release(android.content.Context)
     public static final boolean isSystemPickerAvailable$activity_release()
+    public final android.net.Uri parseResult(int,android.content.Intent)
+    public synthetic bridge java.lang.Object parseResult(int,android.content.Intent)
 androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions:
     public static final java.lang.String ACTION_REQUEST_PERMISSIONS
     public static final java.lang.String EXTRA_PERMISSIONS
@@ -21833,6 +21832,7 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     private static final java.lang.Object firstNotNullOfOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.lang.Object firstOrNull(java.lang.Iterable)
     public static final java.lang.Object firstOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object firstOrNull(java.util.List)
     public static final java.util.List flatMap(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.util.List flatMapIndexedIterable(java.lang.Iterable,kotlin.jvm.functions.Function2)
     private static final java.util.Collection flatMapIndexedIterableTo(java.lang.Iterable,java.util.Collection,kotlin.jvm.functions.Function2)
@@ -25907,11 +25907,23 @@ androidx.activity.result.PickVisualMediaRequestKt
 androidx.activity.result.contract.ActivityResultContract$SynchronousResult:
     public static java.lang.Object getValue()
 androidx.activity.result.contract.ActivityResultContracts$GetContent:
-    public static android.content.Intent createIntent()
-    public static androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult()
-    public final android.net.Uri parseResult()
+    public final android.content.Intent createIntent()
+    public final androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult()
+    public static android.net.Uri parseResult()
 androidx.activity.result.contract.ActivityResultContracts$GetMultipleContents$Companion
-androidx.activity.result.contract.ActivityResultContracts$GetMultipleContents
+androidx.activity.result.contract.ActivityResultContracts$GetMultipleContents:
+    public static final androidx.activity.result.contract.ActivityResultContracts$GetMultipleContents$Companion Companion
+    static void <clinit>()
+    public final android.content.Intent createIntent()
+    public final androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult()
+    public final java.util.List parseResult()
+androidx.activity.result.contract.ActivityResultContracts$PickMultipleVisualMedia$Companion
+androidx.activity.result.contract.ActivityResultContracts$PickMultipleVisualMedia:
+    public static final androidx.activity.result.contract.ActivityResultContracts$PickMultipleVisualMedia$Companion Companion
+    static void <clinit>()
+    public static android.content.Intent createIntent$1()
+    public static androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult$1()
+    public final java.util.List parseResult()
 androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$Companion$$InternalSyntheticThrowCCEIfNotNull$16$55b774d5c17e9821c610ac247fd3875ab0410650f6d8cd4001f6e80d8f99878b$0
 androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$Companion:
     public static android.content.pm.ResolveInfo getGmsPicker$activity_release(android.content.Context)
@@ -25922,12 +25934,7 @@ androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$Compan
 androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$ImageOnly
 androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$SingleMimeType
 androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$VideoOnly
-androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia:
-    public static final androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia$Companion Companion
-    static void <clinit>()
-    public static android.content.Intent createIntent$1()
-    public static androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult$1()
-    public final android.net.Uri parseResult()
+androidx.activity.result.contract.ActivityResultContracts$PickVisualMedia
 androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions$Companion
 androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions:
     public static final androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions$Companion Companion
@@ -31397,13 +31404,14 @@ com.apermesa.stegtool.AudioEmbedder:
     static void <clinit>()
     public static byte[] buildGeobFrame()
     public static varargs byte[] buildId3v24Tag()
-    public static java.io.File embedFile()
+    public static java.io.File embedFiles()
     public static java.util.List extractFiles()
     public static int indexOf1(byte[],int)
     public static int intDecode()
     public static kotlin.Pair parseGeobBody()
     public static java.lang.String resolveDisplayName()
     public static byte[] stripId3()
+    public static byte[] syncsafeEncode(int)
 com.apermesa.stegtool.MainActivity$runEmbed$1$outFile$1:
     public int label
     public final java.lang.Object invoke$1()
@@ -31415,7 +31423,6 @@ com.apermesa.stegtool.MainActivity$runExtract$1$files$1:
 com.apermesa.stegtool.MainActivity$runExtract$1:
     public final java.lang.Object invoke$1()
 com.apermesa.stegtool.MainActivity:
-    public final void runEmbed(android.net.Uri)
     public static void runExtract()
 com.apermesa.stegtool.R$id
 com.apermesa.stegtool.R$layout
@@ -33538,17 +33545,18 @@ kotlin.collections.ArraysKt___ArraysJvmKt:
     public static final void fill(java.lang.Object[],int,int)
 kotlin.collections.ArraysKt___ArraysKt
 kotlin.collections.ArraysUtilJVM
-kotlin.collections.CollectionsKt:
-    public static final void toCollection(java.lang.Iterable,java.util.AbstractCollection)
-    public static java.util.List toList(java.lang.Iterable)
-    public static final java.util.ArrayList toMutableList(java.util.Collection)
+kotlin.collections.CollectionsKt
 kotlin.collections.CollectionsKt__CollectionsJVMKt:
     public static java.util.List listOf(java.lang.Object)
 kotlin.collections.CollectionsKt__CollectionsKt:
     public static java.util.List emptyList()
     public static final int getLastIndex(java.util.List)
-kotlin.collections.CollectionsKt__IterablesKt:
-    public static int collectionSizeOrDefault(java.util.Collection)
+kotlin.collections.CollectionsKt__IteratorsJVMKt
+kotlin.collections.CollectionsKt__IteratorsKt
+kotlin.collections.CollectionsKt__MutableCollectionsJVMKt
+kotlin.collections.CollectionsKt__MutableCollectionsKt
+kotlin.collections.CollectionsKt__ReversedViewsKt
+kotlin.collections.CollectionsKt___CollectionsJvmKt
 kotlin.collections.CollectionsKt___CollectionsKt
 kotlin.collections.EmptyIterator:
     public static java.lang.Void next()

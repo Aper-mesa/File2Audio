@@ -7,6 +7,7 @@
     <string name="status_idle">就绪，请选择操作。</string>
     <string name="author">作者：Apermesa</string>
     <string name="status_processing">处理中…</string>
+    <string name="status_processing_multi">正在处理 %1$d 个文件…</string>
     <string name="status_done_embed">完成！已保存至：%1$s</string>
     <string name="status_done_extract">已提取 %1$d 个文件至：%2$s</string>
     <string name="status_error">错误：%1$s</string>

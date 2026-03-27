@@ -636,6 +636,7 @@ com.apermesa.stegtool:style/Animation.Design.BottomSheetDialog = 0x7f100005
 com.apermesa.stegtool:style/Animation.AppCompat.Tooltip = 0x7f100004
 com.apermesa.stegtool:style/Animation.AppCompat.DropDownUp = 0x7f100003
 com.apermesa.stegtool:style/AlertDialog.AppCompat = 0x7f100000
+com.apermesa.stegtool:string/status_processing_multi = 0x7f0f00b2
 com.apermesa.stegtool:style/Base.TextAppearance.AppCompat.SearchResult.Title = 0x7f10002a
 com.apermesa.stegtool:string/status_processing = 0x7f0f00b1
 com.apermesa.stegtool:string/status_error = 0x7f0f00af

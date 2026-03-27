@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.contract.ActivityResultContracts.PickVisualMedia
+import androidx.activity.result.contract.ActivityResultContracts.PickMultipleVisualMedia
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -27,15 +28,15 @@ class MainActivity : AppCompatActivity() {
     // ── Activity Result Launchers ────────────────────────────────────────────
 
     private val pickMediaLauncher =
-        registerForActivityResult(PickVisualMedia()) { uri ->
-            if (uri == null) { showStatus(getString(R.string.status_cancelled)); return@registerForActivityResult }
-            runEmbed(uri)
+        registerForActivityResult(PickMultipleVisualMedia()) { uris ->
+            if (uris.isEmpty()) { showStatus(getString(R.string.status_cancelled)); return@registerForActivityResult }
+            runEmbed(uris)
         }
 
     private val pickFileLauncher =
-        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-            if (uri == null) { showStatus(getString(R.string.status_cancelled)); return@registerForActivityResult }
-            runEmbed(uri)
+        registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uris ->
+            if (uris.isEmpty()) { showStatus(getString(R.string.status_cancelled)); return@registerForActivityResult }
+            runEmbed(uris)
         }
 
     private val pickMp3Launcher =
@@ -91,12 +92,13 @@ class MainActivity : AppCompatActivity() {
 
     // ── Core operations ──────────────────────────────────────────────────────
 
-    private fun runEmbed(uri: android.net.Uri) {
+    private fun runEmbed(uris: List<android.net.Uri>) {
         setBusy(true)
+        showStatus(getString(R.string.status_processing_multi, uris.size))
         lifecycleScope.launch {
             try {
                 val outFile = withContext(Dispatchers.IO) {
-                    AudioEmbedder.embedFile(this@MainActivity, uri)
+                    AudioEmbedder.embedFiles(this@MainActivity, uris)
                 }
                 showStatus(getString(R.string.status_done_embed, outFile.absolutePath))
             } catch (e: Exception) {

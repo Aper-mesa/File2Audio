@@ -18,3 +18,4 @@ string status_done_extract
 string status_error
 string status_idle
 string status_processing
+string status_processing_multi

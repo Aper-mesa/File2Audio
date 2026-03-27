@@ -20,20 +20,23 @@ object AudioEmbedder {
     // ── Public API ────────────────────────────────────────────────────────────
 
     /**
-     * Reads [uri], wraps it in a fresh ID3v2.4 GEOB tag over a silent MP3
-     * shell, and writes the result to <externalFilesDir>/embedded/.
+     * Reads each URI in [uris], wraps all of them as GEOB frames in a single
+     * ID3v2.4 tag over a silent MP3 shell, and writes the result to
+     * Downloads/File2Audio/.  Single-file output name is unchanged;
+     * multi-file output name is "<first_basename> 等N个文件 (embedded).mp3".
      */
-    fun embedFile(context: Context, uri: Uri): File {
-        val fileName = resolveDisplayName(context, uri)
-        val fileBytes = context.contentResolver.openInputStream(uri)!!.use { it.readBytes() }
-
-        // Get raw audio frames only (strip the existing minimal ID3 header)
+    fun embedFiles(context: Context, uris: List<Uri>): File {
         val silentRaw = context.resources.openRawResource(R.raw.silent).use { it.readBytes() }
         val audioFrames = stripId3(silentRaw)
 
-        // Build ID3v2.4 tag containing a single GEOB frame
-        val geobFrame = buildGeobFrame(fileName, fileBytes)
-        val id3Tag   = buildId3v24Tag(geobFrame)
+        val fileInfos = uris.map { uri ->
+            val fileName = resolveDisplayName(context, uri)
+            val fileBytes = context.contentResolver.openInputStream(uri)!!.use { it.readBytes() }
+            Pair(fileName, fileBytes)
+        }
+
+        val frames = fileInfos.map { (name, bytes) -> buildGeobFrame(name, bytes) }
+        val id3Tag = buildId3v24Tag(*frames.toTypedArray())
 
         val ts = System.currentTimeMillis()
         val tempFile = File(context.cacheDir, "embed_tmp_$ts.mp3")
@@ -43,8 +46,11 @@ object AudioEmbedder {
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
             "File2Audio"
         ).also { it.mkdirs() }
-        val baseName = fileName.substringBeforeLast('.')
-        val outFile = File(outDir, "$baseName (embedded).mp3")
+        val firstName = fileInfos.first().first
+        val baseName  = firstName.substringBeforeLast('.')
+        val outName   = if (uris.size == 1) "$baseName (embedded).mp3"
+                        else "$baseName 等${uris.size}个文件 (embedded).mp3"
+        val outFile = File(outDir, outName)
         tempFile.copyTo(outFile, overwrite = true)
         tempFile.delete()
         return outFile

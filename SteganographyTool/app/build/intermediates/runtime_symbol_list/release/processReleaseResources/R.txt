@@ -3947,6 +3947,7 @@ int string status_done_extract 0x7f0f00ae
 int string status_error 0x7f0f00af
 int string status_idle 0x7f0f00b0
 int string status_processing 0x7f0f00b1
+int string status_processing_multi 0x7f0f00b2
 int style AlertDialog_AppCompat 0x7f100000
 int style AlertDialog_AppCompat_Light 0x7f100001
 int style Animation_AppCompat_Dialog 0x7f100002
